@@ -20,6 +20,7 @@ dependencies:
   freezed_annotation: ^0.14.1
   webview_flutter: ^2.0.4
   auto_route: ^2.0.1
+  flutter_dotenv: ^5.0.2
   #material_design_icons_flutter: ^5.0.5955-rc.1
   #json_annotation: ^4.0.1
   #sembast: ^3.0.2
@@ -42,3 +43,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+assets:
+  - .env
