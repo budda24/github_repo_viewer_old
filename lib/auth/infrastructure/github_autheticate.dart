@@ -1,7 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
-import 'dart:io';
-
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';
@@ -10,6 +8,7 @@ import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
 import 'package:repo_viewer/auth/domain/auth_faliure.dart';
 import 'package:repo_viewer/auth/infrastructure/credential_storage/credentials_storage.dart';
+import 'package:repo_viewer/core/infastructure/dio_extantion.dart';
 
 import 'package:repo_viewer/core/shared/encoders.dart';
 
@@ -104,7 +103,7 @@ class GithubAuthenticator {
           ),
         );
       } on DioError catch (e) {
-        if (e.type == DioErrorType.other && e.error == SocketException) {
+        if (e.isNoConnectionError) {
           print('no internet connection');
         }
       }
