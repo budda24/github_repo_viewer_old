@@ -28,7 +28,7 @@ class GithubAuthenticator {
   GithubAuthenticator(this._credentialsStorage, this._dio);
 
   static final authorizationEndpoint =
-      Uri.parse('http://example.com/oauth2/authorization');
+      Uri.parse('https://github.com/login/oauth/authorize');
   static final tokenEndpoint = Uri.parse('http://example.com/oauth2/token');
   static final redirectUrl = Uri.parse('http://localhost:3000/callback');
   static const revocationEndPoint =
